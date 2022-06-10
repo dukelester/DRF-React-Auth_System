@@ -9,6 +9,7 @@ import SignUp from './containers/SignUp'
 import ResetPassword from './containers/ResetPassword'
 import ResetPasswordConfirm from './containers/ResetPasswordConfirm'
 import Activate from './containers/Activate'
+import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -18,9 +19,9 @@ root.render(
     <Route exact path="/" element={<App />} />
     <Route exact path="/login" element={<Login />} />
     <Route exact path="/signup" element={<SignUp />} />
-    <Route path="/reset-password" element={<ResetPassword />} />
-    <Route path="/password-reset-confirm/:uid/token" element={<ResetPasswordConfirm />} />
-    <Route path="/activate/:uid/token" element={<Activate />} />
+    <Route exact path="/reset-password" element={<ResetPassword />} />
+    <Route exact path="/password/reset/confirm/:uid/:token" element={<ResetPasswordConfirm />} />
+    <Route exact path="/activate/:uid/:token" element={<Activate />} />
   </Routes>
   </BrowserRouter>
    
